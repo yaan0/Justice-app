@@ -28,10 +28,6 @@ const titleStyles = {
   color: "#363636",
 };
 
-const spanStyles = {
-  color: "#848484",
-};
-
 const costStyles = {
   marginRight: "16px",
   fontSize: "12px",
@@ -61,7 +57,6 @@ const Search = () => {
   return (
     <div className="App">
       <StyleComponent
-        // sx={{ width: 500 }}
         freeSolo
         options={countries}
         getOptionLabel={(option) => option.title}
@@ -87,6 +82,7 @@ const Search = () => {
                       marginRight: "6px",
                     }}
                     src="/images/arrowTop.svg"
+                    alt='arrowTop'
                   />
                   {option.rise}
                 </div>
@@ -101,7 +97,7 @@ const Search = () => {
             style={{
               borderRadius: "none",
             }}
-            placeholder="Search"
+            placeholder="Search for currency"
             InputProps={{
               ...params.InputProps,
               startAdornment: (

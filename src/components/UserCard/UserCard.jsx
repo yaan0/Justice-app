@@ -2,8 +2,7 @@ import Avatar from '@mui/material/Avatar';
 
 import './UserCard.css'
 
-const UserCard = () => {
-  return (
+const UserCard = () => (
     <div className='userCard-container'>
     <div className="userCard-wrapper">
       <div className="userCard-layots">
@@ -35,6 +34,6 @@ const UserCard = () => {
 
     </div>
   )
-}
+
 
 export default UserCard;

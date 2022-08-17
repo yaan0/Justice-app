@@ -24,7 +24,6 @@ const BlackButton = styled(Button)({
 })
 
 const BasicButtons = ({disabled, text,color, size }) => {
-
   return (
     <BlackButton
       color={color === 'error' ? 'error' : 'primary'}

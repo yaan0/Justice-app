@@ -4,7 +4,6 @@ import Checkbox from '@mui/material/Checkbox';
 import {styled} from "@mui/material/styles";
 
 const CssCheckBox = styled(FormGroup)({
-
   '& .css-j204z7-MuiFormControlLabel-root .MuiFormControlLabel-label': {
     color: '#363636',
   },
@@ -15,12 +14,12 @@ const CssCheckBox = styled(FormGroup)({
 });
 
 
-export default function CheckboxLabels() {
-  return (
+const CheckboxLabels = () => (
     <CssCheckBox>
       <FormControlLabel
         control={<Checkbox />}
         label="Запомнить меня"/>
     </CssCheckBox>
   );
-}
+
+export default CheckboxLabels;
