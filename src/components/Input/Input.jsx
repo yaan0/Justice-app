@@ -2,8 +2,6 @@ import { useForm } from "react-hook-form";
 import {TextField} from "@mui/material";
 import {styled} from "@mui/material/styles";
 
-// MuiInputBase-input
-
 const CssTextField = styled(TextField)({
   width: '332px',
   backgroundColor: 'white',
@@ -40,38 +38,25 @@ const Input = ({disabled}) => {
   } = useForm();
 
   const onSubmit = (data) => {
-    alert(JSON.stringify(data));
+    console.log(data)
     reset();
   };
 
   return (
-    <form
-      style={{
-        marginBottom: 15,
-        '& .Mui-focused': {
-          border: '1px solid #363636',
-        },
-      }}
-      onSubmit={handleSubmit(onSubmit)}
-    >
+    <>
       <CssTextField
         id="filled-basic"
-        {...register("firstName", {
-          required: "Поле обязательно к заполнению",
-          minLength: {
-            value: 2,
-            message: "Минимум 2 символа",
-          },
-        })}
+        {...register("firstName",)}
         disabled={disabled}
-        label="Имя" variant="filled"/>
-
+        label="Имя" variant="filled"
+        onChange={handleSubmit(onSubmit)}
+      />
 
       {errors?.firstName && (
-        <p style={{}}>{errors?.firstName?.message || "Error message"}</p>
+        <p style={{}}>{errors?.firstName && "Error message"}</p>
       )}
 
-    </form>
+    </>
   );
 };
 

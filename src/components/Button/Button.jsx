@@ -1,10 +1,5 @@
-import * as React from "react";
-
-
-
 import { styled } from '@mui/material/styles';
 import Button from "@mui/material/Button";
-
 
 
 const BlackButton = styled(Button)({
@@ -29,7 +24,6 @@ const BlackButton = styled(Button)({
 })
 
 const BasicButtons = ({disabled, text,color, size }) => {
-
   return (
     <BlackButton
       color={color === 'error' ? 'error' : 'primary'}

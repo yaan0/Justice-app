@@ -1,28 +1,15 @@
 import * as React from 'react';
+import {useState} from "react";
 import Box from '@mui/material/Box';
 import MenuItem from '@mui/material/MenuItem';
 import {FormControl, OutlinedInput, Select} from "@mui/material";
 import {styled} from "@mui/material/styles";
-
-
 import rus from "../../assets/rus.svg";
 import united from "../../assets/united.svg";
 import china from "../../assets/china.svg";
 import eur from "../../assets/euro.svg";
 import turkney from "../../assets/turkney.svg";
 import "./Select.css";
-
-
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
-    },
-  },
-};
 
 const CssTextField = styled(Select)({
   border: '1px solid #ECECEC',
@@ -41,16 +28,7 @@ const CssTextField = styled(Select)({
   '& fieldset':{
     display: 'none',
   },
-  // '& .css-y2lzvp-MuiInputBase-root-MuiOutlinedInput-root-focus': {
-  //   border: '1px solid #363636',
-  // },
-  // '& ' : {
-  //   display: 'flex',
-  //   alignItem: 'center',
-  // },
-
 });
-
 
 const currencies = [
   {
@@ -80,13 +58,12 @@ const currencies = [
   },
 ];
 
-export default function SelectTextFields() {
-  const [currency, setCurrency] = React.useState([]);
+const SelectTextFields = () => {
+  const [currency, setCurrency] = useState([]);
 
   const handleChange = (event) => {
     setCurrency(event.target.value);
   };
-
   return (
     <Box
       component="form"
@@ -132,3 +109,5 @@ export default function SelectTextFields() {
     </Box>
   );
 }
+
+export default SelectTextFields;
