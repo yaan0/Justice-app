@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import {ThemeProvider} from "@mui/material/styles";
+import {createTheme} from "@mui/material";
+import {Theme} from "./theme";
 
+
+import BlackButton from "./components/Button/Button";
+import ButtonWhite from "./components/Button/WhiteButton";
+import CheckboxLabels from "./components/CheckBox/CheckBox";
+import Input from "./components/Input/Input";
+import BasicSelect from "./components/Select/Select";
+
+import './App.css';
 function App() {
+
+  const theme = createTheme(Theme);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeProvider theme={theme}>
+        <header className="App-header">
+          <BlackButton text='Call to action' size='large' disabled={false} />
+          <ButtonWhite text='Call to action' size='medium' disabled={false} color='error'/>
+          <BasicSelect/>
+          <CheckboxLabels />
+          <Input disabled={false}/>
+        </header>
+      </ThemeProvider>
     </div>
   );
 }
