@@ -1,15 +1,16 @@
 import {ThemeProvider} from "@mui/material/styles";
 import {createTheme} from "@mui/material";
 import {Theme} from "./theme";
-
-
 import BlackButton from "./components/Button/Button";
 import ButtonWhite from "./components/Button/WhiteButton";
 import CheckboxLabels from "./components/CheckBox/CheckBox";
 import Input from "./components/Input/Input";
 import BasicSelect from "./components/Select/Select";
+import Search from "./components/Search/Search";
+import UserCard from "./components/UserCard/UserCard";
 
 import './App.css';
+
 function App() {
 
   const theme = createTheme(Theme);
@@ -22,6 +23,8 @@ function App() {
           <BasicSelect/>
           <CheckboxLabels />
           <Input disabled={false}/>
+          <Search/>
+          <UserCard/>
         </header>
       </ThemeProvider>
     </div>

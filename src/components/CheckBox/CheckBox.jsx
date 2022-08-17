@@ -1,4 +1,3 @@
-import * as React from 'react';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
@@ -16,8 +15,7 @@ const CssCheckBox = styled(FormGroup)({
 });
 
 
-export default function CheckboxLabels({ error = false }) {
-  console.log(error)
+export default function CheckboxLabels() {
   return (
     <CssCheckBox>
       <FormControlLabel
